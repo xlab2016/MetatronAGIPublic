@@ -32,6 +32,7 @@ I invite **scientists, researchers, engineers, and curious minds** to not just t
 The project is in **R&D phase**, progressing through these stages:
 
 1. Prototype of Singularity/Point structure (PostgreSQL + LLM Embeddings)  
+  Memory module almost ready, with initial tests on semantic graph nodes!
 2. Semantic engine for knowledge linking and clustering  
 3. Simulation of cognitive nodes  
 4. Distributed network of collective synthetic intelligence
@@ -101,6 +102,7 @@ RUSSIAN:
 Проект находится на **R&D стадии**, реализуется поэтапно:
 
 1. Прототип структуры Singularity/Point (PostgreSQL + LLM Embeddings)
+   Модуль памяти почти готов, проведены первые тесты на семантических графовых узлах!
 2. Семантический движок связей и кластеризации
 3. Моделирование когнитивных узлов
 4. Распределённая сеть коллективного интеллекта
