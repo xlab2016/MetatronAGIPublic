@@ -1,0 +1,155 @@
+### AGI Model ERM
+
+- ***Singularity***
+  - Id: bigint (Primary Key)
+  - Task: nvarchar(max)
+  - TaskLLMVector: json
+  - LayersCount: int
+  - VisualRepresentation: json
+  - Content: nvarchar(max)
+  - Version: int
+
+  - Space: Space (Foreign Key)
+  - Points: Point[] (One-to-Many)
+  - Segments: Segment[] (One-to-Many)
+
+- ***Point***
+  - Id: bigint (Primary Key)
+  - Task: nvarchar(max)
+  - TaskLLMVector: json
+  - TaskContextLLMVector: json
+  - IsSuperCluster: bit
+  - PositionVector: json
+  - Layer: int
+  - QuantumTask: json
+  - QuantumSpace: json
+  - VisualRepresentation: json
+  - SpaceDimension: int
+  - Name: nvarchar(250)
+  - Content: nvarchar(max)
+  - Weight: float
+  - Type: int (1 - resource, 2 - content, 3 - semantic)
+
+  - Singularity: Singularity (Foreign Key)
+  - Vector: Vector (Foreign Key)
+  - Object: Object (Foreign Key)
+  - Computer: QuantumComputer (Foreign Key)
+  - Agent: LLMAgent (Foreign Key)
+  - TimeSpaces: PointTimeSpace[] (One-to-Many)
+
+- ***PointTimeSpace***
+  - Id: bigint (Primary Key)
+  - Time: datetime
+  - Snapshot: json
+
+  - Point: Point (Foreign Key)
+
+- ***Resource***
+  - Id: int (Primary Key)
+  - LLMProvider: int // [1 - OpenAI, 2 - Gemini, 3 - DeepSeek, 4 - Grok]
+  - QuantumProvider: int // [1 - Google, ...]
+
+- ***QuantumComputer***
+  - Id: bigint (Primary Key)
+  - Resource: Resource (Foreign Key)
+
+- ***LLMAgent***
+  - Id: bigint (Primary Key)
+  - Resource: Resource (Foreign Key)
+
+- ***Space***
+  - Id: bigint (Primary Key)
+  - Type: int // [1 - Conceptual, 2 - Visual, 3 - Temporal]
+  - Name: nvarchar(250)
+
+  - Singularities: Singularity[] (One-to-Many)
+  - Objects: Object[] (One-to-Many)
+  - Relations: Relation[] (One-to-Many)
+  - Vectors: Vector[] (One-to-Many)
+
+- ***Object***
+  - Id: bigint (Primary Key)
+  - IsSubject: bit
+  - Name: nvarchar(250)
+  - Type: varchar(10)
+  - Data: json
+
+  - Singularity: Singularity (Foreign Key)
+  - Space: Space (Foreign Key)
+  - Points: Point[] (One-to-Many)
+
+- ***Relation***
+  - Id: bigint (Primary Key)
+  - Type: varchar(50)
+
+  - Singularity: Singularity (Foreign Key)
+  - From: Object (Foreign Key)
+  - To: Object (Foreign Key)
+  - Space: Space (Foreign Key)
+
+- ***Vector***
+  - Id: bigint (Primary Key)
+  - Data: json
+  - ExternalId: bigint
+  - Content: nvarchar(max)
+
+  - Singularity: Singularity (Foreign Key)
+  - Space: Space (Foreign Key)
+  - Point: Point (Foreign Key)
+  - Object: Object (Foreign Key)
+
+- ***Segment***
+  - Id: bigint (Primary Key)
+  - TypeName: nvarchar(50)
+  - Type: int
+  - Weight: float
+
+  - Singularity: Singularity (Foreign Key)
+  - From: Point (Foreign Key)
+  - To: Point (Foreign Key)
+
+### Пояснения к ERM модели
+
+#### ***Singularity***
+- **Русский**: Таблица, представляющая сингулярности, которые задают конкретные задачи и содержат точки (points). Каждая сингулярность связана с пространством и может иметь несколько сегментов и точек.
+- **English**: Table representing singularities that define specific tasks and contain points. Each singularity is connected to a space and can have multiple segments and points.
+
+#### ***Point***
+- **Русский**: Таблица, описывающая отдельные точки знания или агенты в рамках сингулярности. Каждая точка содержит информацию о задаче, визуализации и может ссылаться на квантовый компьютер и агента.
+- **English**: Table describing individual knowledge points or agents within a singularity. Each point holds task information, visualization, and may reference a quantum computer and agent.
+
+#### ***PointTimeSpace***
+- **Русский**: Таблица, содержащая временные аспекты для каждой точки знания. Позволяет хранить временные снимки (snapshots) состояния точки в определенное время.
+- **English**: Table holding temporal aspects for each knowledge point. It allows storage of temporal snapshots of the point's state at a specific time.
+
+#### ***Resource***
+- **Русский**: Таблица, описывающая доступные ресурсы, включая провайдеров LLM (Large Language Models) и квантовых провайдеров, используемых AGI.
+- **English**: Table describing available resources, including LLM (Large Language Models) providers and quantum providers used by AGI.
+
+#### ***QuantumComputer***
+- **Русский**: Таблица, представляющая квантовые компьютеры, которые могут быть использованы AGI. Каждое устройство связано с ресурсом.
+- **English**: Table representing quantum computers that can be utilized by AGI. Each device is linked to a resource.
+
+#### ***LLMAgent***
+- **Русский**: Таблица, описывающая LLM-агентов, использующихся в AGI. Каждый агент также привязан к определенному ресурсу.
+- **English**: Table describing LLM agents used in AGI. Each agent is also associated with a specific resource.
+
+#### ***Space***
+- **Русский**: Таблица, представляющая пространственную организацию сингулярностей и объектов. Пространство может быть концептуальным, визуальным или временным.
+- **English**: Table representing the spatial organization of singularities and objects. The space can be conceptual, visual, or temporal.
+
+#### ***Object***
+- **Русский**: Таблица, представляющая объекты, которые могут быть независимыми или связаны с отдельными сингулярностями. Объекты могут содержать точки и иметь различные типы.
+- **English**: Table representing objects that can be independent or associated with specific singularities. Objects may contain points and have various types.
+
+#### ***Relation***
+- **Русский**: Таблица, описывающая отношения между объектами в пространстве. Позволяет установить связи между различными сущностями.
+- **English**: Table describing relationships between objects in the space. It allows establishing connections among various entities.
+
+#### ***Vector***
+- **Русский**: Таблица, представляющая векторы данных или embedding, используемые для хранения и обработки информации о знаниях и объектах.
+- **English**: Table representing data vectors or embeddings used for storing and processing information about knowledge and objects.
+
+#### ***Segment***
+- **Русский**: Таблица, описывающая отрезки знаний, которые связывают две точки в одном контексте. Каждый сегмент также может быть связан с сингулярностью.
+- **English**: Table describing segments of knowledge that connect two points within a context. Each segment may also be associated with a singularity.
