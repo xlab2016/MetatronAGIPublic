@@ -1,0 +1,29 @@
+# Core dependencies for Metatron AGI - Heuristic Implementation
+# No LLM dependencies - using heuristic algorithms only
+
+# Database
+psycopg2-binary>=2.9.0
+sqlalchemy>=2.0.0
+
+# NLP and text processing (heuristic-based)
+nltk>=3.8.0
+scikit-learn>=1.3.0
+spacy>=3.7.0
+numpy>=1.24.0
+
+# Graph processing
+networkx>=3.1.0
+
+# Data structures
+pandas>=2.0.0
+
+# Visualization (optional)
+matplotlib>=3.7.0
+plotly>=5.14.0
+
+# Configuration
+python-dotenv>=1.0.0
+
+# Testing
+pytest>=7.4.0
+pytest-cov>=4.1.0
