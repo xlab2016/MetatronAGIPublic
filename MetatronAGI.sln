@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dotnet", "dotnet", "{27BA3E13-65C0-4F64-9AD2-8748A5B0B9E6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{871F61A1-5DEE-48E8-AD1B-89E0444F0E83}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetatronAGI.Core", "dotnet\src\MetatronAGI.Core\MetatronAGI.Core.csproj", "{B39C9039-33A0-42EB-9FBB-5628E8AD57BC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "examples", "examples", "{B84A4CDA-FEFC-4C77-B65C-7721CA3F98EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetatronAGI.Examples", "dotnet\examples\MetatronAGI.Examples\MetatronAGI.Examples.csproj", "{6AF43B69-49E0-474D-86B8-BCBF01EC1DFA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{35F46C41-2A90-4AE6-B0F5-AA3D6AE09A20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetatronAGI.Tests", "dotnet\tests\MetatronAGI.Tests\MetatronAGI.Tests.csproj", "{7C9028D8-AE05-493E-BF3A-E9E317C91A4D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B39C9039-33A0-42EB-9FBB-5628E8AD57BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B39C9039-33A0-42EB-9FBB-5628E8AD57BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B39C9039-33A0-42EB-9FBB-5628E8AD57BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B39C9039-33A0-42EB-9FBB-5628E8AD57BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AF43B69-49E0-474D-86B8-BCBF01EC1DFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AF43B69-49E0-474D-86B8-BCBF01EC1DFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AF43B69-49E0-474D-86B8-BCBF01EC1DFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AF43B69-49E0-474D-86B8-BCBF01EC1DFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C9028D8-AE05-493E-BF3A-E9E317C91A4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C9028D8-AE05-493E-BF3A-E9E317C91A4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C9028D8-AE05-493E-BF3A-E9E317C91A4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C9028D8-AE05-493E-BF3A-E9E317C91A4D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{871F61A1-5DEE-48E8-AD1B-89E0444F0E83} = {27BA3E13-65C0-4F64-9AD2-8748A5B0B9E6}
+		{B39C9039-33A0-42EB-9FBB-5628E8AD57BC} = {871F61A1-5DEE-48E8-AD1B-89E0444F0E83}
+		{B84A4CDA-FEFC-4C77-B65C-7721CA3F98EC} = {27BA3E13-65C0-4F64-9AD2-8748A5B0B9E6}
+		{6AF43B69-49E0-474D-86B8-BCBF01EC1DFA} = {B84A4CDA-FEFC-4C77-B65C-7721CA3F98EC}
+		{35F46C41-2A90-4AE6-B0F5-AA3D6AE09A20} = {27BA3E13-65C0-4F64-9AD2-8748A5B0B9E6}
+		{7C9028D8-AE05-493E-BF3A-E9E317C91A4D} = {35F46C41-2A90-4AE6-B0F5-AA3D6AE09A20}
+	EndGlobalSection
+EndGlobal
