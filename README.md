@@ -31,11 +31,45 @@ I invite **scientists, researchers, engineers, and curious minds** to not just t
 
 The project is in **R&D phase**, progressing through these stages:
 
-1. Prototype of Singularity/Point structure (PostgreSQL + LLM Embeddings)  
-  Memory module almost ready, with initial tests on semantic graph nodes!
-2. Semantic engine for knowledge linking and clustering  
-3. Simulation of cognitive nodes  
-4. Distributed network of collective synthetic intelligence
+1. ✅ **Heuristic Implementation (Phase 1)** - COMPLETED
+   - Pure algorithmic approach without LLM dependencies
+   - Concept extraction using TF-IDF and frequency analysis
+   - Meta-model building with multidimensional graphs
+   - PostgreSQL database following ERM model
+   - Working examples and experiments
+
+2. Prototype of Singularity/Point structure (PostgreSQL + LLM Embeddings)
+   Memory module almost ready, with initial tests on semantic graph nodes!
+3. Semantic engine for knowledge linking and clustering
+4. Simulation of cognitive nodes
+5. Distributed network of collective synthetic intelligence
+
+## 🚀 Quick Start
+
+### Heuristic Implementation (No LLM Required)
+
+This implementation uses **pure heuristic algorithms** for concept extraction and world building:
+
+```bash
+# Install dependencies
+pip install -r requirements.txt
+
+# Run example
+python examples/create_virtual_world.py
+
+# Test concept extraction
+python experiments/test_concept_extraction.py
+```
+
+**Key Features:**
+- ✅ No API keys or LLM services needed
+- ✅ Fast, deterministic processing
+- ✅ Works completely offline
+- ✅ Implements full ERM model
+- ✅ Supports Russian and English
+
+See [docs/QUICKSTART.md](docs/QUICKSTART.md) for detailed usage guide.
+See [docs/IMPLEMENTATION.md](docs/IMPLEMENTATION.md) for technical details.
 
 ## 🧭 Ethics & Safety
 
